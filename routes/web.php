@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 
-//------------------ Mis Rutas------------------------
-Route::get('/mi_ruta', function($name){
+//------------------ Mis Rutas-------------------------
+Route::get('/mi_ruta/{name}', function($name){
     return 'Hola mundo soy '.$name;
 });
 
@@ -29,7 +29,7 @@ Route::get('/usuario/{names}', function($names){
     return 'Bienvendido '.$names;
 });
 
-//--------------------------------------------------------
+//------------------------------------------------------
 
 Route::get('Ruta2', function(){
     return 'Esta es la ruta dos';
@@ -37,6 +37,6 @@ Route::get('Ruta2', function(){
 
 Route::get('prueba', 'pruebaController@prueba');
 
-//--------------------------------------------------
+//------------------------------------------------------
 
 Route::resource('trainers', 'TrainerController');
