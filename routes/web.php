@@ -36,3 +36,7 @@ Route::get('Ruta2', function(){
 });
 
 Route::get('prueba', 'pruebaController@prueba');
+
+//--------------------------------------------------
+
+Route::resource('trainers', 'TrainerController');
