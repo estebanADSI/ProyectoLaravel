@@ -10,12 +10,12 @@
     <center> 
     
     <div class="container">
-    <h1>Hola Soy la vista</h1>
+    <h1 class="mt-3">Formulario De Ingreso</h1>
     <div class="form-group">
         <label for="">Nombre</label>
         <input type="text" class="form-control">
     </div>
-    <button class="btn btn-danger" type="submit">Guardar</button>
+    <button class="btn btn-outline-dark" type="submit">Guardar</button>
     </div>
     </center>
 </body>
