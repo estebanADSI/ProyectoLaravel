@@ -34,3 +34,5 @@ Route::get('/usuario/{names}', function($names){
 Route::get('Ruta2', function(){
     return 'Esta es la ruta dos';
 });
+
+Route::get('prueba', 'pruebaController@prueba');
