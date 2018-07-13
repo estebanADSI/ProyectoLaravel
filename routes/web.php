@@ -22,5 +22,5 @@ Route::get('/mi_ruta', function($name){
 });
 
 Route::get('/name/{name}', function($name){
-    return 'Hola soy '.$name;
-});
+    return 'Hola  '.$name;
+})
