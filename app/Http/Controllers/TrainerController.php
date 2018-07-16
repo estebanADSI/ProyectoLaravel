@@ -41,11 +41,19 @@ class TrainerController extends Controller
        // return $request->all();
         
         //cre aun usuario en la base de datos
+        
+       if($request->hasFile('avatar')){
+           $file = $request->file('avatar');
+           $name = time().$file->getClientOriginalName();
+           $file->move(public_path().'/images/', $name);
+       }
+        
         $trainer = new Trainer();
         $trainer->name = $request->input('nombre');
+        $trainer->avatar = $name;
         $trainer->save();
         
-        return 'Saved';
+        return '<h1>Saved</h1>';
         
     }
 
