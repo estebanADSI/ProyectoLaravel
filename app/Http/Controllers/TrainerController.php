@@ -15,7 +15,9 @@ class TrainerController extends Controller
      */
     public function index()
     {
-        return 'Hola soy el TrainerControlador';
+        $trainers = Trainer::all();
+        return view('trainers.index', compact('trainers'));
+        //return 'Hola soy el TrainerControlador';
     }
 
     /**
@@ -37,6 +39,8 @@ class TrainerController extends Controller
     public function store(Request $request)
     {
        // return $request->all();
+        
+        //cre aun usuario en la base de datos
         $trainer = new Trainer();
         $trainer->name = $request->input('nombre');
         $trainer->save();
