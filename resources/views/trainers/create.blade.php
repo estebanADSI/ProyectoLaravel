@@ -8,14 +8,19 @@
 
 
     <h1 class="mt-3">Formulario De Ingreso</h1>
-    <div class="form-group">
+    <form class="form-group" method="POST" action="/trainers"> 
+    @csrf
+    <div class="form-group" >
         <label for="">Nombre</label>
-        <input type="text" class="form-control" placeholder="Escribe tu nombre">
+        <input type="text" class="form-control" placeholder="Escribe tu nombre" name="nombre">
+        
     </div>
-    <button class="btn btn-outline-dark" type="submit">Guardar</button>
+    <button type="submit"  class="btn btn-outline-dark " >Guardar</button>
+    </form>
   
     
 @endsection
+
 <!--
 <!DOCTYPE html>
 <html lang="en">

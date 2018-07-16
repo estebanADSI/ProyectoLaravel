@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use  App\Trainer;
 use Illuminate\Http\Request;
 
 class TrainerController extends Controller
@@ -34,7 +36,13 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // return $request->all();
+        $trainer = new Trainer();
+        $trainer->name = $request->input('nombre');
+        $trainer->save();
+        
+        return 'Saved';
+        
     }
 
     /**
