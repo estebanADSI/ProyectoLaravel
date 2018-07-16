@@ -38,5 +38,5 @@ Route::get('Ruta2', function(){
 Route::get('prueba', 'pruebaController@prueba');
 
 //------------------------------------------------------
-
+//---------------Rutapra mostrar vista entrenadores--------------//
 Route::resource('trainers', 'TrainerController');

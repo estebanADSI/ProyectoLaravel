@@ -1,3 +1,22 @@
+@extends('layouts.app')
+
+
+@section('title', 'Trainer Create')
+
+
+@section('content')
+
+
+    <h1 class="mt-3">Formulario De Ingreso</h1>
+    <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" placeholder="Escribe tu nombre">
+    </div>
+    <button class="btn btn-outline-dark" type="submit">Guardar</button>
+  
+    
+@endsection
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +26,7 @@
 
 </head>
 <body>
-    <center> 
-    
-    <div class="container">
-    <h1 class="mt-3">Formulario De Ingreso</h1>
-    <div class="form-group">
-        <label for="">Nombre</label>
-        <input type="text" class="form-control">
-    </div>
-    <button class="btn btn-outline-dark" type="submit">Guardar</button>
-    </div>
-    </center>
+   
 </body>
 </html>
+-->
