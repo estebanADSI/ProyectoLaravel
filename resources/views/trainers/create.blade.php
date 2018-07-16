@@ -16,12 +16,22 @@
         
     </div>
     
-    <div class="form-group" >
+
+    
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripcion</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+    
+    
+    
+    
+        <div class="form-group mt-3" >
         <label for="">Avatar</label>
         <input type="file"  name="avatar">
         
     </div>
-    <button type="submit"  class="btn btn-outline-dark " >Guardar</button>
+  </div>
+    <button type="submit"  class="btn btn-danger" >Guardar</button>
     </form>
   
     

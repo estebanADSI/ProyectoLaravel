@@ -16,12 +16,12 @@
        
              <div class="col">
              
-              <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="images/{{$trainer->avatar}}" alt="Card image cap">
+              <div class="card text-center" style="width: 18rem;">
+                  <img style="heigth:150px; width:150px; background-color:#EFEFEF; margin:25px;"  class="card-img-top rounded-circle mx-auto d-block" src="images/{{$trainer->avatar}}" alt="Card image cap">
                   <div class="card-body">
                    <h5 class="card-title">{{$trainer->name}}</h5>
-                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-outline-dark">Go somewhere</a>
+                         <p class="card-text">{{$trainer->description}}</p>
+                              <a href="{{$trainer->id}}" class="btn btn-outline-dark">Ver mas...</a>
                     </div>
                  </div>
                </div>
