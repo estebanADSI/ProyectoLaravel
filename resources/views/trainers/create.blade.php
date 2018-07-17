@@ -7,10 +7,10 @@
 @section('content')
 
 
-    <h1 class="mt-3">Formulario De Ingreso</h1>
+    <h1 class="mt-3">Formulario De Registro</h1>
     <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data"> 
     @csrf
-    <div class="form-group" >
+    <div class="form-group mt-5" >
         <label for="">Nombre</label>
         <input type="text" class="form-control" placeholder="Escribe tu nombre" name="nombre">
         
