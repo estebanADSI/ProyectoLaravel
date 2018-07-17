@@ -100,9 +100,10 @@ class TrainerController extends Controller
      */
     public function update(Request $request, Trainer $trainer)
     {
-       //return $request;
+       
         
-        
+                        $trainer->name = $request->input('nombre');
+
         $trainer->fill($request->except('avatar'));
         if($request->hasFile('avatar')){
            $file = $request->file('avatar');
@@ -110,6 +111,8 @@ class TrainerController extends Controller
             $trainer->avatar = $name;
            $file->move(public_path().'/images/', $name);
        }
+        
+                $trainer->name = $request->input('nombre');
         $trainer->save();
         
         return '<h1>Actualizado</h1>' ; 
