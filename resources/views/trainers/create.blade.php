@@ -7,7 +7,7 @@
 @section('content')
 
     
-    {!!Form::open(['route']) !!}
+
     
     
 
@@ -26,13 +26,13 @@
     <label for="exampleFormControlTextarea1">Descripcion</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
     
-    <!--
+    
       <div class="form-group mt-5" >
         <label for="">Slug</label>
         <input type="text" class="form-control" placeholder="Escribe tu slug" name="slug">
         
     </div>
-    -->
+
         <div class="form-group mt-3" >
         <label for="">Avatar</label>
         <input type="file"  name="avatar">

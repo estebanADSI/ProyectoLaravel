@@ -16,7 +16,7 @@
        
              <div class="col">
              
-              <div class="card text-center border-dark" style="width: 18rem;">
+              <div class="card text-center border-dark mt-3" style="width: 18rem;">
                   <img style="heigth:150px; width:150px; background-color:#EFEFEF; margin:25px;"  class="card-img-top rounded-circle mx-auto d-block" src="images/{{$trainer->avatar}}" alt="Card image cap">
                   <div class="card-body ">
                    <h5 class="card-title">{{$trainer->name}}</h5>
