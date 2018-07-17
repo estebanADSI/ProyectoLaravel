@@ -66,7 +66,8 @@ class TrainerController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('trainers.show');
+        //return 'hola'.$id;
     }
 
     /**
