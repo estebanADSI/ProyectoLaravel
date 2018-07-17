@@ -6,6 +6,10 @@
 
 @section('content')
 
+    
+    {!!Form::open(['route']) !!}
+    
+    
 
     <h1 class="mt-3">Formulario De Registro</h1>
     <form class="form-group" method="POST" action="/trainers" enctype="multipart/form-data"> 

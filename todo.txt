@@ -1,2 +1,3 @@
-- Curso Laravel
++ Curso Laravel
+- Arreglar el cambio de nombre
 
