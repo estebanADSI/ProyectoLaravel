@@ -40,8 +40,15 @@ class TrainerController extends Controller
     {
        // return $request->all();
         
-        //cre aun usuario en la base de datos
+        //cre aun usuario en la base de datos ---------------------------------------------------------------------------
         
+        
+        $validatedData = $request->validate([
+            'name' => 'required|min:5',
+            'avatar' => 'required|image',
+            'description' => 'required',
+            'slug' => 'required'
+        ]);
        if($request->hasFile('avatar')){
            $file = $request->file('avatar');
            $name = time().$file->getClientOriginalName();
