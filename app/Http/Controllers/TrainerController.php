@@ -79,7 +79,7 @@ class TrainerController extends Controller
         
         
         
-        return redirect()->route('trainer.index');
+        return redirect()->route('trainers.index');
         
         
     }

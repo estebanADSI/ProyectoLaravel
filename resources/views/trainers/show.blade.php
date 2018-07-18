@@ -15,9 +15,8 @@
                          
                          <a href="/trainers/{{$trainer->slug}}/edit/" class="btn btn-outline-success">Editar</a>
                          
-                         
-                       {!! Form::open(['route' =>['trainers.destroy', $trainer->slug], 'method' => 'DELETE']) !!}
                        
+                       {!! Form::open(['route' =>['trainers.destroy', $trainer->slug], 'method' => 'DELETE']) !!}                      
                            {!! Form::submit('Eliminar',['class' => 'btn btn-success'] ) !!}
                        {!! Form::close() !!}
                        
