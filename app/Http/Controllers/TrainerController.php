@@ -58,6 +58,7 @@ class TrainerController extends Controller
         
         
         //----------------------------Para guardar laimagen en la capeta imagenes -----------
+        
            if($request->hasFile('avatar')){
            $file = $request->file('avatar');
            $name = time().$file->getClientOriginalName();
@@ -127,9 +128,10 @@ class TrainerController extends Controller
     {
        
         
-                        $trainer->name = $request->input('nombre');
+         $trainer->name = $request->input('nombre');
 
          $trainer->fill($request->except('avatar'));
+        
            if($request->hasFile('avatar')){
            $file = $request->file('avatar');
            $name = time().$file->getClientOriginalName();
