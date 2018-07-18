@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use  App\Trainer;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\StoreTrainerRequest;
 class TrainerController extends Controller
 {
     /**
@@ -36,33 +36,51 @@ class TrainerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTrainerRequest $request)
     {
        // return $request->all();
         
-        //cre aun usuario en la base de datos ---------------------------------------------------------------------------
+        //crea un usuario en la base de datos ---------------------------------------------
         
+        //--------------------------Validacion de los campos -------------------------------
         
+        /*
         $validatedData = $request->validate([
             'name' => 'required|min:5',
             'avatar' => 'required|image',
             'description' => 'required',
             'slug' => 'required'
         ]);
-       if($request->hasFile('avatar')){
+        */
+        //-----------------------------------------------------------------------------------
+        
+           
+        
+        
+        //----------------------------Para guardar laimagen en la capeta imagenes -----------
+           if($request->hasFile('avatar')){
            $file = $request->file('avatar');
            $name = time().$file->getClientOriginalName();
            $file->move(public_path().'/images/', $name);
        }
+        //------------------------------------------------------------------------------------
         
+        
+        
+        
+        //----------------------Para obtener los datos del input ----------------------------
         $trainer = new Trainer();
         $trainer->name = $request->input('nombre');
         $trainer->avatar = $name;
         $trainer->description = $request->input('description');
         $trainer->slug = $request->input('slug');
         $trainer->save();
+        //-----------------------------------------------------------------------------------
         
-        return '<h1>Saved</h1>';
+        
+        
+        return redirect()->route('trainer.index');
+        
         
     }
 
@@ -111,18 +129,20 @@ class TrainerController extends Controller
         
                         $trainer->name = $request->input('nombre');
 
-        $trainer->fill($request->except('avatar'));
-        if($request->hasFile('avatar')){
+         $trainer->fill($request->except('avatar'));
+           if($request->hasFile('avatar')){
            $file = $request->file('avatar');
            $name = time().$file->getClientOriginalName();
             $trainer->avatar = $name;
            $file->move(public_path().'/images/', $name);
        }
         
-                $trainer->name = $request->input('nombre');
+        $trainer->name = $request->input('nombre');
         $trainer->save();
         
-        return '<h1>Actualizado</h1>' ; 
+        
+        
+   return redirect()->route('trainers.show', [$trainer])->with('status', 'Entrenador Actualizado');
     }
 
     /**
@@ -131,8 +151,11 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Trainer $trainer)
     {
-        //
+        $file_path = public_path().'/images/'.$trainer->avatar;
+        \File::delete($file_path);
+        $trainer->delete();
+        return redirect()->route('trainers.index');
     }
 }
